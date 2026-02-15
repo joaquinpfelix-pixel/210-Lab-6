@@ -8,7 +8,6 @@ void outputArrayData(double* ptr, int size);
 double sumArray(double* ptr, int size);
 
 int main() {
-
     const int size = 5;
     double* numbers = new double[size];
 
