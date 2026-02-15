@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -13,13 +12,14 @@ int main() {
     const int size = 5;
     double* numbers = new double[size];
 
-    
-
     enterArrayData(numbers, size);
     outputArrayData(numbers, size);
     cout << "Sum of values: " << sumArray(numbers, size) << endl;  
 
+    delete[] numbers;
+    numbers = nullptr;
 
+    return 0;
 }
 
 void enterArrayData(double* numbers, int size){
@@ -39,8 +39,9 @@ void outputArrayData(double* numbers, int size){
 
     for (int i = 0; i < size; i++)
     {
-        cout << (numbers + i) << " ";
+        cout << *(numbers + i) << " ";
     }
+    cout << endl;
 }
 
 double sumArray(double* numbers, int size){
@@ -50,4 +51,6 @@ double sumArray(double* numbers, int size){
     {
         sum += *(numbers + i);
     }
+
+    return sum;
 }
