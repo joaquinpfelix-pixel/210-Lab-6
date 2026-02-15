@@ -14,6 +14,10 @@ int main() {
     double* numbers = new double[size];
 
     cout << "Data entry for the array: " << endl;
+    for (int i = 0; i < size; i++){
+        cout << "    > Element #" << i << ": ";
+        cin >> *(numbers + i);
+    }
 
     enterArrayData(numbers, size);
     outputArrayData(numbers, size);
@@ -21,3 +25,4 @@ int main() {
 
 
 }
+
